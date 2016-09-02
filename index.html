@@ -1,19 +1,18 @@
 <HTML>
 	<head>
-		<link type="text/css" rel="stylesheet" href="style.css"/>
-		<link href='https://fonts.googleapis.com/css?family=Oswald:700,400,300' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet" media='screen and (min-width: 1000px)' href="style.css"/>
+		<link rel='stylesheet' media='screen and (max-width: 1000px)' href="mobile.css" />
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script type='text/javascript' src='script.js'></script>
+		<script src="js/jquery.form.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
-
+		<link rel="icon" href="images/favicon.png">
 		<title>Edmund Tian</title>
 	</head>
 	<body>
 		<div class="navigation-bar">
 			<a id="navi-name">Edmund Tian</a>
-			<!-- <img src="images/basic-blackBackground3.png" id="navi-logo" /> -->
-			<!-- <a href="http://server/page.html#anchor-name">Link text</a> -->
 			<div id="navigation-bar-right">
 				<div class="bottom_aligner"></div>
 				<a id="about-me-link" class="navigation-bar-element">
@@ -32,7 +31,10 @@
 					Education
 				</a>
 				<a id="extracurriculars-link" class="navigation-bar-element">
-					Exracurriculars
+					Extracurriculars
+				</a>
+				<a id="contact-link" class="navigation-bar-element">
+					Contact
 				</a>
 			</div>
 		</div>
@@ -46,46 +48,108 @@
 			<div id="frontpage-overlay"></div>
 			<img id="main-logo" src="images/main-logo-white.png" />
 		</div>
+		<div id="mobile-full-navi">
+			<div id="mobile-navi-bar">
+				<div id="mobile-navi-name">
+					<a id="navi-name">Edmund Tian</a>
+				</div>
+				<a>
+					<img id="mobile-menu-open" class="menu-toggle" src="images/mobile-menu-open.png" />
+				</a>
+				<a>
+					<img id="mobile-menu-close" class="menu-toggle" src="images/mobile-menu-close.png" />
+				</a>
+			</div>
+			<div id="links">
+				<div id="links-inner">
+					<div id="mobile-about-me" class="mobile-menu-element">
+						<a id="about-me-link">
+							About Me
+						</a>
+					</div>
+					<div id="mobile-skills" class="mobile-menu-element">
+						<a id="skills-link">
+							Skills
+						</a>
+					</div>
+					<div id="mobile-projects" class="mobile-menu-element">
+						<a id="projects-link">
+							Projects
+						</a>
+					</div>
+					<div id="mobile-experience" class="mobile-menu-element">
+						<a id="experience-link">
+							Experience
+						</a>
+					</div>
+					<div id="mobile-education" class="mobile-menu-element">
+						<a id="education-link">
+							Education
+						</a>
+					</div>
+					<div id="mobile-extracurriculars" class="mobile-menu-element">
+						<a id="extracurriculars-link">
+							Extracurriculars
+						</a>
+					</div>
+					<div id="mobile-contact" class="mobile-menu-element">
+						<a id="extracurriculars-link">
+							Contact
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- 
 		START CANVAS
 		 -->
 		<div class="canvas">
-			<div class="inner-section" id="about-me">
-				<div class="header">
+			<!-- ABOUT ME -->
+			<div id="about-me">
+				<div class="header" id="about-me-header">
 					<h1>About Me</h1>
 				</div>
-				<div id="left">
-					<img id="looking-propic" src="images/looking-propic.png" />
-				</div>
-				<div id="about-me-description">
-					<h2>Hey, what's up, hello</h2>
-					<p>
-						I'm a rising sophmore and intended (almost declared) computer science major at UC Berkeley. I am passionate about computer science, and I find it amazing what one can do with it. What's even more amazing is technology's growing importance in today's society; my lifelong dream is to make my mark on this technological revolution. I hope to do this through working a software engineering job immediately after graduating and eventually starting my own company.
-					</p>
-					<p>
-						I just finished taking my favorite class ever, CS61B, a class on data structures. I loved this class because it introduced me to actual engineering aspect of computer science. I learned so much about modularizing, utilizing data structures, and writing clean code through the various class projects. I enjoyed them so much, that ever since, I have been looking for ways to build my own projects outside the classroom. Recently, I have gotten into web design/development, having created a dance website for my mom and started working on this, my personal website. I am also looking forward to begin working on a startup-worthy idea with a couple of my friends when I return to Berkeley.
-					</p>
-					<p>
-						My interests extend way beyond technology. I love opportunities to become one with nature, such as hiking along some of the beautiful trails around the bay area. I also consider myself somewhat of an athlete, having played ice hockey at travel and high school levels throughout most of my youth. 
-					</p>
+				<div id="about-me-body">
+					<div id="slideshow">
+						<div id="slideshow1"></div>
+						<div id="slideshow2"></div>
+						<div id="slideshow3"></div>
+						<div id="slideshow4"></div>
+					</div>
+					<div id="about-me-description">
+						<div id="inner-description">
+							<h1 id="description-header">Hey, what's up, hello</h1>
+							<p>
+								I'm a sophmore and declared computer science major at UC Berkeley. Computer science is a passion of mine, and I find it amazing what one can do with it. What's even more amazing is technology's growing importance in today's society; my lifelong dream is to make my mark on this technological revolution through my own startup.
+							</p>
+							<p>
+								I just finished taking my favorite class ever, CS61B, a class on data structures. I loved this class because it introduced me to the actual engineering aspect of computer science.
+								I enjoyed it so much, that ever since, I have been looking for ways to build my own projects outside the classroom. Recently, I have gotten into web design/development, having created a dance website for my sister and this, my personal website. This website has been my favorite project so far because I have learned so much from it and it gives me a medium to showcase both my abilities and me as a person to the world. I've just started picking up app development as well, and I'm looking forward to submitting an app to the app store in the near future.
+							</p>
+							<p>
+								I believe that everyone has an amazing life story, and I would love to hear about yours. Feel free to message me through the contact form or connect with me through one of the social media icons at the bottom of the page. The down arrow to the right will take you right there!
+							</p>
+						</div>
+					</div>
 				</div>
 				<div id="letter">
 					<div class="bottom_aligner"></div>
-					<a id="resume-link" href="Edmund_Tian_Resume.docx" download>
+					<a id="resume-link" href="Edmund_Tian_Resume.pdf" target="_blank">
 						<img id="letter-unopened" src="images/letter-unopened.png"/>
 					</a>
-					<a id="resume-link" href="Edmund_Tian_Resume.docx" download>
+					<a id="resume-link" href="Edmund_Tian_Resume.pdf" target="_blank">
 						<img id="letter-opened" src="images/letter-opened.png"/>
 					</a>
 				</div>
 			</div>
+			<!-- SKILLS -->
 			<div id="skills">
 				<div class="inner-section" id="skills">
 					<div class="header" id="skills-header">
 						<h1>Skills</h1>
 					</div>
 					<div id="languages">
-						<h1>Languages</h1>
+						<h1>Languages/Frameworks</h1>
 						<i class="devicon-java-plain"></i> Java
 						<div class="progress-bar">
 							<div id="java" class="progress"></div>
@@ -102,6 +166,14 @@
 						<div class="progress-bar">
 							<div id="css3" class="progress"></div>
 						</div>
+						<img class="skills-icon" src="images/swift.png"/> Swift
+						<div class="progress-bar">
+							<div id="swift" class="progress"></div>
+						</div>
+						<img class="skills-icon" src="images/jquery.png"/>&nbsp;jQuery
+						<div class="progress-bar">
+							<div id="jQuery" class="progress"></div>
+						</div>
 						<i class="devicon-javascript-plain"></i> JavaScript
 						<div class="progress-bar">
 							<div id="javascript" class="progress"></div>
@@ -110,23 +182,70 @@
 						<div class="progress-bar">
 							<div id="c-sharp" class="progress"></div>
 						</div>
-						<i class="devicon-mysql-plain"></i> SQL
+						<img class="skills-icon" src="images/scheme.png"/>&nbsp;Scheme
 						<div class="progress-bar">
-							<div id="sql" class="progress"></div>
+							<div id="scheme" class="progress"></div>
+						</div>
+						<img class="skills-icon" src="images/spark.png"/>Java Spark
+						<div class="progress-bar">
+							<div id="spark" class="progress"></div>
+						</div>
+						<img class="skills-icon" src="images/php.png"/>&nbsp;PHP
+						<div class="progress-bar">
+							<div id="php" class="progress"></div>
+						</div>
+						<img class="skills-icon" src="images/angularjs.png"/>AngularJS
+						<div class="progress-bar">
+							<div id="ajax" class="progress"></div>
+						</div>
+						<img class="skills-icon" src="images/dot-net.png"/>.NET
+						<div class="progress-bar">
+							<div id="dot-net" class="progress"></div>
 						</div>
 					</div>
-					<div id="tools">
-						<h1 id="tools-header">Tools</h1>
-						<ul>
-							<li id="jQuery" class="tool">jQuery</li>
-							<li id="gitHub" class="tool">GitHub</li>
-							<li id="intelliJ" class="tool">IntelliJ</li>
-							<li id="visualStudio" class="tool">Visual Studio</li>
-							<li id="eclipse" class="tool">Eclipse</li>
-							<li id="apacheMaven" class="tool">Apache Maven</li>
-							<li id="javaSpark" class="tool">Java Spark</li>
-							<li id="dot-net" class="tool">.NET framework</li>
-						</ul>
+					<div id="tools-and-other">
+						<div id="tools">
+							<div class="tools-block">
+								<h1 class="tools-header">Tools</h1>
+								<ul class="tools-column">
+									<li id="gitHub" class="tool">GitHub</li>
+									<li id="gitHub" class="tool">BitBucket</li>
+									<li id="cPanel" class="tool">cPanel</li>
+									<li id="apacheMaven" class="tool">Apache Maven</li>
+									<li id="javaSpark" class="tool">Java Spark</li>
+									<li id="xcode" class="tool">Xcode</li>
+									<li id="intelliJ" class="tool">IntelliJ</li>
+									<li id="visualStudio" class="tool">Visual Studio</li>
+									<li id="eclipse" class="tool">Eclipse</li>
+								</ul>
+							</div>
+							<div class="tools-block">
+								<h1 class="tools-header">Databases</h1>
+								<ul class="tools-column">
+									<li id="firebase" class="tool">Firebase</li>
+									<li id="mySQL" class="tool">MySQL</li>
+								</ul>
+							</div>
+							<div class="tools-block">
+								<h1 class="tools-header">APIs</h1>
+								<ul class="tools-column">
+									<li id="facebook" class="tool">Facebook API</li>
+								</ul>
+							</div>
+						</div>
+
+						<div id="other-tools-mobile">
+							<h1 id="tools-header">Others</h1>
+							<ul>
+								<li class="tool">Illustrator</li>
+								<li class="tool">Premier Pro</li>
+								<li class="tool">Photoshop</li>
+								<li class="tool">After Effects</li>
+								<li class="tool">PowerPoint</li>
+								<li class="tool">Excel</li>
+								<li class="tool">AutoCAD</li>
+							</ul>
+						</div>
 					</div>
 					<div id="other-tools">
 						<h1 id="others-header">Others</h1>
@@ -136,19 +255,26 @@
 					</div>
 				</div>
 			</div>
+			<!-- PROJECTS -->
 			<div id="projects">
 				<div class="inner-section">
 					<div class="header">
 						<h1>Projects</h1>
 					</div>
 					<div class="projects-row">
-						<div class="projects-left">
-							<img class="projects-img" src="images/project-textEditor.png"/>
+						<div class="projects-left" id="split-imgs">
+							<a href="https://github.com/3dmund/Editor">
+								<img class="split-img" src="images/project-split.png"/>
+							</a>
+							<a href="https://github.com/3dmund/Editor">
+								<img class="split-img" src="images/project-split2.png"/>
+							</a>
 						</div>
-						<div class="projects-right">
-							<h2>Text Editor</h2>
+						<div class="projects-right" id="split-row">
+							<h2>Split</h2>
 							<p class="projects-description">
-								This is a text editor I created using Java and JavaFX libraries. It is capable of basic text editor features such as word wrapping, window resizing, opening/saving files, and changing font size.
+								This is an ios app I am finishing up with two other people using Swift, XCode, and Firebase. The app is purposed to facilitate the purchasing of communal items within a group of people, such as roommates. It includes a shared list where everyone can add and upvote items (like in reddit). The app can also calculate how much each person owes that user, and displays it in the payment feed. It supports Facebook login. <br>
+								<a class="project-link" href="https://github.com/3dmund/Editor">https://github.com/3dmund/Editor</a>
 							</p>
 						</div>
 					</div>
@@ -156,7 +282,7 @@
 						<div class="projects-left">
 							<h2>Personal Website</h2>
 							<p class="projects-description">
-								This website. Personal website I made to practice my web development skills and let the world know about myself. Made with HTML, CSS, JQuery, and Adobe Illustrator. 
+								This website. Personal website I made to practice my web development skills and let the world know about myself. Made with HTML, CSS, JQuery, PHP, AJAX, and Adobe Illustrator. 
 							</p>
 						</div>
 						<div class="projects-right">
@@ -165,28 +291,60 @@
 					</div>
 					<div class="projects-row">
 						<div class="projects-left">
-							<img class="projects-img" src="images/project-dancePlanet.png"/>
+							<a href="https://github.com/3dmund/Editor">
+								<img class="projects-img" src="images/project-textEditor.png"/>
+							</a>
+						</div>
+						<div class="projects-right">
+							<h2>Text Editor</h2>
+							<p class="projects-description">
+								This is a text editor I created using Java and JavaFX libraries. It is capable of basic text editor features such as cursor movement with clicking/arrow keys, word wrapping, scrolling, and undo/redo. <br>
+								<a class="project-link" href="https://github.com/3dmund/Editor">https://github.com/3dmund/Editor</a>
+							</p>
+						</div>
+					</div>
+					<div class="projects-row">
+						<div class="projects-left">
+							<h2>Bear Maps</h2>
+							<p class="projects-description">
+								I developed the backend of a mapping application of Berkeley using Java, Apache Maven, and images downloaded from OpenStreetMap. It can handle features such as moving the screen by dragging, zooming in/out, and double clicking two points to find the shortest path.
+								<a class="project-link" href="https://github.com/3dmund/Bear-Maps">https://github.com/3dmund/Bear-Maps</a>
+							</p>
+						</div>
+						<div class="projects-right">
+							<a href="https://github.com/3dmund/Bear-Maps">
+								<img class="projects-img" src="images/project-bearMaps.png"/>
+							</a>
+						</div>
+					</div>
+					<div class="projects-row last-row">
+						<div class="projects-left">
+							<a href="http://thedanceplanet.com/">
+								<img class="projects-img" src="images/project-dancePlanet.png"/>
+							</a>
 						</div>
 						<div class="projects-right">
 							<h2>The Dance Planet</h2>
 							<p class="projects-description">
 								A helpful, accessible dance resource for aspiring professional dancers, recreational dancers, or any dance enthusiast.
-								One can find the latest news in the dance world, popular dance media, and information on dance competitions and companies. Made with HTML, CSS, and JavaScript.
+								One can find the latest news in the dance world, popular dance media, and information on dance competitions and companies. Made with HTML, CSS, JavaScript, PHP, and AJAX.<br>
+								<a class="project-link" href="http://thedanceplanet.com">http://thedanceplanet.com</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- EXPERIENCE -->
 			<div id="experience">
 				<div class="inner-section">
-					<div class="header">
+					<div id="experience-header" class="header">
 						<h1>Experience</h1>
 					</div>
 					<div id="experience-body">
 						<div class="universal-row">
 							<div class="universal-left">
-								<h1>ProfitSword</h1>
-								<img class="universal-img" src="images/profitsword.png" />
+								<h1 class="universal-organization">ProfitSword</h1>
+								<img class="hidden-mobile-img, universal-img" src="images/profitsword.png" />
 							</div>
 							<div class="universal-right">
 								<div class="universal-header">
@@ -202,9 +360,9 @@
 							</div>
 						</div>
 						<div class="universal-row">
-							<div class="universal-left">
-								<h1>GTRI</h1>
-								<img class="universal-img" src="images/gtri.png" />
+							<div id="gtri" class="universal-left">
+								<h1 class="universal-organization">GTRI</h1>
+								<img class="hidden-mobile-img, universal-img" src="images/gtri.png" />
 							</div>
 							<div class="universal-right">
 								<div class="universal-header">
@@ -219,68 +377,146 @@
 
 							</div>
 						</div>
+						<div class="universal-row last-row">
+							<div id="gtri" class="universal-left">
+								<h1 class="universal-organization">EOBA</h1>
+								<img class="hidden-mobile-img, universal-img" src="images/eoba.png" />
+							</div>
+							<div class="universal-right">
+								<div class="universal-header">
+									<h2 class="universal-title">Developmental Intern</h2>
+									<h4 class="universal-date">January 2016 - May 2016</h4>
+								</div>
+								<ul>
+									<li>Examine and reorganize the Salesforce page, allowing users to use it more efficiently and access important information more easily.</li>
+									<li>Compile volunteer/donor information and entering into a Salesforce database, allowing EOBA to track hours and donations.</li>
+									<li>Manage the organization's social media platforms, increasing following and spreading knowledge of EOBA to the greater community.</li>
+								</ul>
+
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!-- EDUCATION -->
 			<div class="inner-section" id="education">
-				<div class="header">
+				<div id="education-header" class="header">
 					<h1>Education</h1>
 				</div>
-				<div class="universal-row" id="education-row">
+				<div class="universal-row last-row" id="education-row">
 					<div class="universal-left">
-						<h1>UC Berkeley</h1>
+						<h1 class="universal-organization">UC Berkeley</h1>
 						<img class="universal-img" src="images/berkeley.png" />
 					</div>
 					<div class="universal-right">
 						<div class="universal-header">
-							<h2 class="universal-title">Computer Science - 3.7 GPA</h2>
+							<h2 class="universal-title">Computer Science - 3.72 GPA</h2>
 							<h4 class="universal-date">May 2019</h4>
 						</div>
 						<ul>
 							<li>Structure and Interpretation of Computer Programs - Python (CS 61A)</li>
 							<li>Data Structures - Java (CS 61B)</li>
 							<li>Discrete Mathematics and Probability (CS 70)</li>
+							<li>Designing Information Devices and Systems I (EE 16A)</li>
+							<li>Linear Algebra (Math 54)</li>
 							<li>Calculus (Math 1A/1B)</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="inner-section" id="extracurriculars">
-				<div class="header" id="extras-header">
-					<h1>Extracurriculars</h1>
-				</div>
-				<div class="universal-row">
-					<div class="universal-left">
-						<h1>ABA</h1>
-						<img class="universal-img" src="images/aba.png" />
+			<!-- EXTRACURRICULARS -->
+			<div id="extracurriculars">
+				<div class="inner-section" id="extracurriculars">
+					<div class="header" id="extras-header">
+						<h1>Extracurriculars</h1>
 					</div>
-					<div class="universal-right">
-						<div class="universal-header">
-							<h2 class="universal-title">Media Tech Committee Member</h2>
-							<h4 class="universal-date">September 2015 - December 2015</h4>
+					<div class="universal-row">
+						<div class="universal-left">
+							<h1 class="hidden-mobile-name universal-organization">ABA</h1>
+							<img class="mobile-organization-logo universal-img" src="images/aba.png" />
 						</div>
-						<ul>
-							<li>Filmed, directed, and produced event recaps and short films to foster a sense of community within the organization of 50+ members.</li>
-							<li>Promoted events, videos, and the organization itself by utilizing Adobe Illustrator and Photoshop to design cover photos and flyers.</li>
-						</ul>
+						<div class="universal-right">
+							<div class="universal-header">
+								<h2 class="universal-title">Media Tech Committee Member</h2>
+								<h4 class="universal-date">September 2015 - December 2015</h4>
+							</div>
+							<ul>
+								<li>Filmed, directed, and produced event recaps and short films to foster a sense of community within the organization of 50+ members.</li>
+								<li>Promoted events, videos, and the organization itself by utilizing Adobe Illustrator and Photoshop to design cover photos and flyers.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="universal-row">
+						<div class="universal-left">
+							<h1 class="hidden-mobile-name universal-organization">Berkeley EECS</h1>
+							<img class="mobile-organization-logo universal-img" src="images/eecs.png" />
+						</div>
+						<div class="universal-right">
+							<div class="universal-header">
+								<h2 class="universal-title">CS61A Lab Assistant</h2>
+								<h4 class="universal-date">January 2016 - May 2016</h4>
+							</div>
+							<ul>
+								<li>Tutored and explained to students taking an introductory computer science course questions and concepts they were struggling with.</li>
+								<li>Assisted the official TA by assisting individual students needing help, reducing his workload and allowing him to focus on other tasks.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="universal-row">
+						<div class="universal-left">
+							<h1 class="hidden-mobile-name universal-organization">Phi Kappa Tau</h1>
+							<img class="mobile-organization-logo universal-img" src="images/pkt.png" />
+						</div>
+						<div class="universal-right">
+							<div class="universal-header">
+								<h2 class="universal-title">Active Member</h2>
+								<h4 class="universal-date">January 2016 - present</h4>
+							</div>
+							<ul>
+								<li>We work with SeriousFun Children's Network through hosting an annual Bear Pong Tournament, which raises funds for seriously ill children. </li>
+								<li>Fulfill required community service hours through The Berkeley Project and picking up trash at Grizzly Peak.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="universal-row last-row">
+						<div class="universal-left">
+							<h1 class="universal-organization">Atlanta Phoenix Hockey</h1>
+							<img id="phoenix" class="universal-img" src="images/phoenix.png" />
+						</div>
+						<div class="universal-right">
+							<div class="universal-header">
+								<h2 class="universal-title">Team Captain</h2>
+								<h4 class="universal-date">September 2013 - March 2014</h4>
+							</div>
+							<ul>
+								<li>Led teammates through words and by example, taking on the responsibility as a model teammate for my 15 teammates to follow.</li>
+								<li>Represented the team and talked to referees whenever an in-game issue arose, minimalizing chaos and the potential for fights.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<div class="universal-row">
-					<div class="universal-left">
-						<h1>Berkeley EECS</h1>
-						<img class="universal-img" src="images/eecs.jpg" />
-					</div>
-					<div class="universal-right">
-						
-						<div class="universal-header">
-							<h2 class="universal-title">CS61A Lab Assistant</h2>
-							<h4 class="universal-date">January 2016 - May 2016</h4>
-						</div>
-						<ul>
-							<li>Tutored and explained to students taking an introductory computer science course questions and concepts they were struggling with.</li>
-							<li>Assisted the official TA by assisting individual students needing help, reducing his workload and allowing him to focus on other tasks</li>
-						</ul>
-					</div>
+			</div>
+			<!-- Contact -->
+			<div class="inner-section" id="contact">
+				<div id="education-header" class="header">
+					<h1>Contact</h1>
+				</div>
+				<iframe id="formDestination" name="formDestination"></iframe>
+				<div id="contact-form-outter">
+					<form class="form" action="form.php" method="post" name="contact-form" target="formDestination">
+						<p class="form-name">
+							<input class="text-field" type="text" name="name" id="name" placeholder="Full Name" />
+						</p>
+						<p class="form-email">
+							<input class="text-field" type="text" name="email" id="email" placeholder="Email" />
+						</p>
+						<p class="form-message">
+							<textarea class="text-field" name="message" id="message" placeholder="Message" /></textarea>
+						</p>
+						<p class="submit">
+							<input id="submit" name="submit" type="submit" value="SEND MESSAGE"/>
+						</p>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -289,16 +525,16 @@
 		 -->
 		<div class="footer">
 			<div id="social-media-bar">
-				<a href="https://www.facebook.com/edmonehh">
+				<a href="https://www.facebook.com/edmonehh" target="_blank">
 					<img class="icon" src="images/icons/facebook color.svg" />
 				</a>
-				<a href="https://www.instagram.com/edmonehh">
+				<a href="https://www.instagram.com/edmonehh" target="_blank">
 					<img class="icon" src="images/icons/instagram color.png" />
 				</a>
-				<a href="https://www.linkedin.com/in/edmundtian">
+				<a href="https://www.linkedin.com/in/edmundtian" target="_blank">
 					<img class="icon" src="images/icons/linkedin color.svg" />
 				</a>
-				<a>
+				<a href="https://github.com/3dmund" target="_blank">
 					<img class="icon" src="images/icons/github color.svg" />
 				</a>
 			</div>

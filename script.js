@@ -7,9 +7,54 @@ $(document).ready(function() {
 	$('#experience-link').click(scrollToExperience);
 	$('#education-link').click(scrollToEducation);
 	$('#extracurriculars-link').click(scrollToExtracurriculars);
+	$('#contact-link').click(scrollToContact);
+
+	$('#mobile-navi-name').click(scrollToTop);
+	$('#mobile-about-me').click(scrollToAboutMe);
+	$('#mobile-skills').click(scrollToSkills);
+	$('#mobile-projects').click(scrollToProjects);
+	$('#mobile-experience').click(scrollToExperience);
+	$('#mobile-education').click(scrollToEducation);
+	$('#mobile-extracurriculars').click(scrollToExtracurriculars);
+	$('#mobile-contact').click(scrollToContact);
 
 	$('#arrow-up').click(scrollToTop);
 	$('#arrow-down').click(scrollToBottom);
+
+	// Mobile
+	$('#mobile-menu-open').click(function() {
+		$(this).hide();
+		$('#mobile-menu-close').show();
+		$('#links').show();
+	})
+	$('#mobile-menu-close').click(function() {
+		$(this).hide();
+		$('#mobile-menu-open').show();
+		$('#links').hide();
+	})
+
+	$(document).mouseup(function (e)
+	{
+	    var container = $('#links');
+
+	    if (!container.is(e.target) // if the target of the click isn't the container...
+	        && container.has(e.target).length === 0) // ... nor a descendant of the container
+	    {
+	        container.hide();
+	        $('#mobile-menu-close').hide();
+			$('#mobile-menu-open').show();
+	    }
+	});
+
+	$("#slideshow > div:gt(0)").hide();
+	setInterval(function() { 
+		$('#slideshow > div:first')
+	    	.fadeOut(1000)
+	    	.next()
+	    	.fadeIn(1000)
+	    	.end()
+	    	.appendTo('#slideshow');
+	},  3500);
 
 	$('#letter-unopened').hover(function() {
 		$(this).hide();
@@ -35,10 +80,6 @@ $(document).ready(function() {
 
 
 	$(window).scroll(function() {
-		// $('.progress').animate({
-		// 	marginLeft: '+=10px'
-		// 	// width: '50%'
-		// }, 500, function() {});
 
 	    var top_of_element = $(".progress").offset().top;
 	    var bottom_of_element = $(".progress").offset().top + $(".progress").outerHeight;
@@ -46,7 +87,7 @@ $(document).ready(function() {
 
 	    // if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element))
 	    if (isElementInViewport($('#java'))) {
-	        $('#java').slideOver('90%');
+	        $('#java').slideOver('95%');
 	    }
 	    if (isElementInViewport($('#python'))) {
 	        $('#python').slideOver('85%');
@@ -57,24 +98,65 @@ $(document).ready(function() {
 	    if (isElementInViewport($('#css3'))) {
 	        $('#css3').slideOver('85%');
 	    }
+	    if (isElementInViewport($('#swift'))) {
+	        $('#swift').slideOver('82%');
+	    }
+	    if (isElementInViewport($('#jQuery'))) {
+	        $('#jQuery').slideOver('77%');
+	    }
 	    if (isElementInViewport($('#javascript'))) {
-	        $('#javascript').slideOver('75%');
+	        $('#javascript').slideOver('70%');
 	    }
 	    if (isElementInViewport($('#c-sharp'))) {
 	        $('#c-sharp').slideOver('60%');
 	    }
-	    if (isElementInViewport($('#sql'))) {
-	        $('#sql').slideOver('40%');
+	    if (isElementInViewport($('#scheme'))) {
+	        $('#scheme').slideOver('40%');
 	    }
-	    if (isElementInViewport($('#sql'))) {
-	        $('#sql').slideOver('40%');
+	    if (isElementInViewport($('#spark'))) {
+	        $('#spark').slideOver('25%');
 	    }
-	    if (isElementInViewport($('#tools-header'))) {
-	        $('#tools').animate({
+	    if (isElementInViewport($('#php'))) {
+	        $('#php').slideOver('20%');
+	    }
+	    if (isElementInViewport($('#ajax'))) {
+	        $('#ajax').slideOver('20%');
+	    }
+	    if (isElementInViewport($('#dot-net'))) {
+	        $('#dot-net').slideOver('15%');
+	    }
+	    if (isElementInViewport($('.tools-header'))) {
+	        $('#tools-and-other').animate({
 				marginRight: '3%'
 			}, 500, function() {});
 	    }
 	});
+	
+	$('[name=contact-form').submit(function() {
+		$('#submit').prop('value', 'SENT!');
+	});
+
+	$('.submit button').on('click', function(e){
+       // e.preventDefault() //this prevents the form from submitting normally, but still allows the click to 'bubble up'.
+       
+       //lets get our values from the form....
+       var name = $('#name').val();
+       var email = $('#email').val();
+       var message = $('#message').val();
+           
+       //now lets make our ajax call
+        $.ajax({
+        	type: "POST",
+         	url: "form.php",
+          	data: { name: name, email: email, message: message }
+        }).done(function() {
+        
+           //replace submit button with some text...
+           // $('[name=submit]').val('Sent!');
+           // $('.submit').after('<span class="messageSent">Message Sent!</span>');
+           
+        });       
+    });
 
 });
 
@@ -84,6 +166,9 @@ $.fn.slideOver = function(amount) {
 	}, 1000, function() {});
 }
 
+function submitForm() {
+	$('.submit').hide();
+}
 
 // function animate
 function isElementInViewport(el) {
@@ -103,48 +188,62 @@ function isElementInViewport(el) {
     );
 }
 
-
-function scrollAt(destination) {
-	$('html, body').animate({
-        scrollTop: $(destination).offset().top
-    }, 500);
-};
+var closeMenu = function() {
+	$('#mobile-menu-close').hide();
+	$('#mobile-menu-open').show();
+	$('#links').hide();
+}
 
 var scrollToTop = function() {
+	closeMenu();
     $('html, body').animate({
         scrollTop:0}, 500);
 };
 var scrollToAboutMe = function() {
+	closeMenu();
     $('html, body').animate({
-        scrollTop: $('#about-me').offset().top
+        scrollTop: $('.canvas').offset().top
     }, 500);
 };
 var scrollToProjects = function() {
+	closeMenu();
     $('html, body').animate({
         scrollTop: $('#projects').offset().top
     }, 500);
 };
 var scrollToSkills = function() {
+	closeMenu();
     $('html, body').animate({
         scrollTop: $('#skills').offset().top
     }, 500);
 };
 var scrollToExperience = function() {
+	closeMenu();
+	$('#links').hide();
     $('html, body').animate({
         scrollTop: $('#experience').offset().top
     }, 500);
 };
 var scrollToEducation = function() {
+	closeMenu();
     $('html, body').animate({
         scrollTop: $('#education').offset().top
     }, 500);
 };
 var scrollToExtracurriculars = function() {
+	closeMenu();
     $('html, body').animate({
         scrollTop: $('#extracurriculars').offset().top
     }, 500);
 };
+var scrollToContact = function() {
+	closeMenu();
+	$('html, body').animate({
+        scrollTop: $('#contact').offset().top
+    }, 500);
+}
 var scrollToBottom = function() {
+	closeMenu();
 	$('html, body').animate({
         scrollTop: $('.footer').offset().top
     }, 500);
